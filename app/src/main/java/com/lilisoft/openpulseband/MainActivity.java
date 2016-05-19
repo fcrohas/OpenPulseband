@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        // Finish with check bluetooth
+        checkBluetooh();
     }
 
     @Override
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         // displays a dialog requesting user permission to enable Bluetooth.
         if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, BluetoothAdapter.ReREQUEST_ENABLE_BT);
+            startActivityForResult(enableBtIntent, 1);
         }
     }
 }
